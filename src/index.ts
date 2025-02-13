@@ -56,6 +56,9 @@ export class cartIt {
 	 */
 	offlineAdd(cartItem: CartItem) {
 		this.cart = this.offlineGet();
+		if (!this.cart) {
+			this.cart = [];
+		}
 		this.cart.push(cartItem);
 		this.offlineSave();
 	}
@@ -111,7 +114,7 @@ export class cartIt {
 		if (typeof window !== "undefined") {
 			return JSON.parse(localStorage.getItem(this.cartKey) || "[]");
 		}
-		return null;
+		return [];
 	}
 
 	/**
@@ -127,10 +130,6 @@ export class cartIt {
 	 */
 	offlineRemove(id: number | string) {
 		this.cart = this.offlineGet();
-
-		if (!this.cart) {
-			return null;
-		}
 
 		const index = this.cart.findIndex((item) => item.id === id);
 
