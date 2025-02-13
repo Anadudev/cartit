@@ -4,6 +4,11 @@ export class cartIt {
 	cartKey: string;
 	cart: CartItem[];
 
+	/**
+	 * Constructs a new instance of the cartIt class.
+	 *
+	 * @param {string} cartKey The unique key for this cart in localStorage.
+	 */
 	constructor(cartKey: string) {
 		this.cartKey = cartKey;
 	}
