@@ -147,7 +147,6 @@ export class cartIt {
 	 * the key specified by `cartKey`. It only performs this operation if the
 	 * `window` object is defined, ensuring compatibility with non-browser environments.
 	 */
-
 	offlineClear() {
 		if (typeof window !== "undefined") {
 			localStorage.removeItem(this.cartKey);
