@@ -1,7 +1,4 @@
-type CartItem = {
-	id: number | string;
-	item: any;
-}
+import { CartItem } from "../types/types";
 
 export class cartIt {
 	cartKey: string;
